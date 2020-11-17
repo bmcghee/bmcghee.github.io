@@ -7,7 +7,7 @@
   <div id="barchart"></div>
 <script type = "text/javascript">
   d3.csv("genre.csv").then(function(data) {
-    
+
 
 var size = d3.min([window.innerWidth*0.9, window.innerHeight*0.9])
  var dimensions = ({
@@ -31,7 +31,7 @@ var size = d3.min([window.innerWidth*0.9, window.innerHeight*0.9])
 
  var xScale = d3.scaleBand()
         .domain(data.map(function(d){return d.name;}))
-        .range([dimensions.margin.left, width - dimensions.margin.right])
+        .range([dimensions.margin.left, dimensions.width - dimensions.margin.right])
 
    svg.append('g')
      .call(d3.axisBottom(xScale))// Append it to svg
