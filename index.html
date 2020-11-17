@@ -42,9 +42,7 @@
            .call(d3.axisBottom(xScale));
 
           g.append("g")
-           .call(d3.axisLeft(yScale).tickFormat(function(d){
-               return d.values;
-           }).ticks(10))
+           .text(data.y))
            .append("text")
            .attr("y", 6)
            .attr("dy", "0.71em")
