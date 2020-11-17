@@ -40,9 +40,6 @@
        .attr("transform", "translate(0," + height + ")")
        .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
-        xScale.domain(data.map(function(d) { return d.name; }));
-        yScale.domain([0, d3.max(data, d => d.values)]).nice()
-        console.log(yScale)
         g.append("g")
            .attr("transform", "translate(0," + height + ")")
            .call(d3.axisBottom(xScale));
@@ -55,6 +52,20 @@
            .attr("text-anchor", "end")
            .text(data.y)
            .text("value");
+           xAxis = g => g
+    .attr("transform", `translate(0,${dimensions.height - dimensions.margin.bottom})`)
+    .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
+
+    yAxis = g => g
+    .attr("transform", `translate(${dimensions.margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(null, data.format))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.append("text")
+        .attr("x", -dimensions.margin.left)
+        .attr("y", 10)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "start")
+        .text(data.y))
 
     });
 </script>
