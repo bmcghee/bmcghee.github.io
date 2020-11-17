@@ -1,0 +1,20 @@
+<html>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+  <h1> First Graph </h1>
+
+  <div class="chart"></div>
+<p>Credit: <a href="https://observablehq.com/@bmcghee/vertical-bar-chart">vertical bar chart by Brandon Mcghee</a></p>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@bmcghee/vertical-bar-chart.js?v=3";
+(new Runtime).module(define, name => {
+  if (name === "chart") return Inspector.into(".chart")();
+});
+</script>
+
+
+</body>
