@@ -23,13 +23,7 @@
        .attr("font-size", "24px")
        .text("Genres")
 
-       var y = d3.scaleLinear()
-     .domain([0, d3.max(data, d => d.values)]).nice()
-     .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
 
-     var xAxis = g => g
-     .attr("transform", `translate(0,${dimensions.height - dimensions.margin.bottom})`)
-     .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
     var g = svg.append("g")
                .attr("transform", "translate(" + 100 + "," + 100 + ")");
@@ -38,6 +32,13 @@
         if (error) {
             throw error;
         }
+        y = d3.scaleLinear()
+       .domain([0, d3.max(data, d => d.values)]).nice()
+       .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
+
+       xAxis = g => g
+       .attr("transform", `translate(0,${dimensions.height - dimensions.margin.bottom})`)
+       .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
         xScale.domain(data.map(function(d) { return d.name; }));
         yScale.domain([0, d3.max(data, d => d.values)]).nice()
