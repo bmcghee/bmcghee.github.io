@@ -6,7 +6,11 @@
   <h1> First Graph </h1>
   <div id="barchart"></div>
 <script type = "text/javascript">
-d3.csv("genre.csv").then(function(data){
+  d3.csv("genre.csv", function(error, data) {
+        if (error) {
+            throw error;
+        }
+
 var size = d3.min([window.innerWidth*0.9, window.innerHeight*0.9])
 console.log(data)
  var dimensions = ({
