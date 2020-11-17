@@ -40,10 +40,7 @@
        .attr("transform", "translate(0," + height + ")")
        .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
-        g.append("g")
-           .attr("transform", "translate(0," + height + ")")
-           .call(d3.axisBottom(xScale));
-
+    
           g.append("g")
 
            .append("text")
