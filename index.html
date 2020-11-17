@@ -6,7 +6,7 @@
   <h1> First Graph </h1>
   <div id="barchart"></div>
 <script type = "text/javascript">
-
+d3.csv("./genre.csv").then(function(data){
 var size = d3.min([window.innerWidth*0.9, window.innerHeight*0.9])
 
  var dimensions = ({
@@ -43,6 +43,6 @@ var size = d3.min([window.innerWidth*0.9, window.innerHeight*0.9])
 
  svg.append('g').call(d3.axisLeft(yScale))// Append it to svg
                 .attr('transform', `translate(${[dimensions.margin.left]},0)`)
-
+}
 
 </body>
