@@ -34,10 +34,10 @@
         }
         y = d3.scaleLinear()
        .domain([0, d3.max(data, d => d.values)]).nice()
-       .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
+       .range([height, 0]);
 
        xAxis = g => g
-       .attr("transform", `translate(0,${dimensions.height - dimensions.margin.bottom})`)
+       .attr("transform", "translate(0," + height + ")")
        .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
         xScale.domain(data.map(function(d) { return d.name; }));
