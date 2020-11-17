@@ -35,7 +35,7 @@
         }
 
         xScale.domain(data.map(function(d) { return d.year; }));
-        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
+        yScale.domain([0, d3.max(data, function(d) { return d.values; })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
@@ -65,9 +65,9 @@
          .enter().append("rect")
          .attr("class", "bar")
          .attr("x", function(d) { return xScale(d.year); })
-         .attr("y", function(d) { return yScale(d.value); })
+         .attr("y", function(d) { return yScale(d.values); })
          .attr("width", xScale.bandwidth())
-         .attr("height", function(d) { return height - yScale(d.value); });
+         .attr("height", function(d) { return height - yScale(d.values); });
     });
 </script>
 </body>
