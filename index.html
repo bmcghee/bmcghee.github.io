@@ -32,6 +32,16 @@
         if (error) {
             throw error;
         }
+        dimensions = ({
+                      width: size,
+                      height: size/2,
+                      margin: {
+                        top: 20,
+                        right: 0,
+                        left: 40,
+                        bottom: 40,
+                      }
+                  });
         y = d3.scaleLinear()
        .domain([0, d3.max(data, d => d.values)]).nice()
        .range([height, 0]);
