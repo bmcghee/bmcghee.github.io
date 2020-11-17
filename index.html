@@ -23,8 +23,13 @@
        .attr("font-size", "24px")
        .text("Genres")
 
-    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-        yScale = d3.scaleLinear().range([height, 0]);
+       var y = d3.scaleLinear()
+     .domain([0, d3.max(data, d => d.values)]).nice()
+     .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
+
+     var xAxis = g => g
+     .attr("transform", `translate(0,${dimensions.height - dimensions.margin.bottom})`)
+     .call(d3.axisBottom(x).tickFormat(i => data[i].name).tickSizeOuter(0))
 
     var g = svg.append("g")
                .attr("transform", "translate(" + 100 + "," + 100 + ")");
