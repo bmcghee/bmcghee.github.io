@@ -1,30 +1,69 @@
-<html>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-  </head>
+<!DOCTYPE html>
+  <html>
+    <h1 style="font-size:30px;font-family:'verdana';text-align:center">IMDB Movie Reviews</h1>
 
-  <body>
+    <p style="text-align:center;font-family:'verdana'">
+      The film industry is incredibly diverse and caters to a wide audience.  This ranges from small, indie films to massive
+      blockbusters that gross millions of dollars.  We were interested to see any kind of relationship that exists between a 
+      film's rating score and its genre. We have gathered an extensive set of information from the IMDB website in an attempt
+      to understand two main questions:
+    </p>
 
-  <div class="chart"></div>
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@bmcghee/vertical-bar-chart.js?v=3";
-(new Runtime).module(define, name => {
-  if (name === "chart") return Inspector.into(".chart")();
-});
-</script>
+    <div style="text-align:left;font-family:'verdana'">
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>1.</strong> What types of films are popular to the general public?<br>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>2.</strong> Which genre of film are movie reviewers, both casual and professional, drawn to or favor?
+    </p><br>
+    
+    <p style="text-align:left;font-family:'verdana'">
+      We began by taking a look at total number of films found on IMDB and grouped them together based on which genre they
+      were most associated with.  This gave us an idea of which films the public tend to be attracted to.  This goes off the
+      assumption that film companies produce movies that they predict will perform well.  We then ordered the genres from
+      largest to smallest.
+      We then asked ourselves the question 'How does the popularity of each genre compare to the number of reviews published
+      for a certain genre?'.  To answer this, we aggregated each movie within a certain genre, like we did previously, and
+      then calculated amount of reviews each film got within that genre.  We then averaged those out to a single number and
+      plotted the results.  This demonstrates which genre reviewers leaned towards more.
+    </div><br>
+
+    <body>
+    <div class="chart",></div>
+      <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/b7579e64ed16d088.js?v=3";
+        (new Runtime).module(define, name => {
+          if (name === "chart") return Inspector.into(".chart")();
+        });
+      </script>
+    </body><br>
 
 
-</body>
+    <body>
+      <div class="chart"></div>  
+      <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/3dc8ae0880fa8dbb.js?v=3";
+        (new Runtime).module(define, name => {
+          if (name === "chart") return Inspector.into(".chart")();
+        });
+      </script>
+    </body>
 
-<body>
+    <div style="text-align:left;font-family:'verdana'">
+      Lastly, we took a look at how this persisted over the last century.  This begins around 1930, when film started to
+      become mainstream across the United States, until the present.  Each color represents a different genre of film
+      and how its trend changed over the years.
+    </div><br><br> 
 
- <div class="chart"></div>
+    <body>
+      <div class="streamgraph"></div>    
+      <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/bf9ccd0ad463f3b5.js?v=3";
+        (new Runtime).module(define, name => {
+          if (name === "streamgraph") return Inspector.into(".streamgraph")();
+        });
+      </script>
+    </body>
 
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@bmcghee/genres.js?v=3";
-(new Runtime).module(define, name => {
- if (name === "chart") return Inspector.into(".chart")();
-});
-</script>
-</body>
+    <br><p style="text-align:center">| Brandon Mcghee ~ Sam Newcomer ~ Dylan Mumm |</p>
+  <html>
