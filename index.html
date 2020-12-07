@@ -22,40 +22,36 @@
       We then asked ourselves the question 'How does the popularity of each genre compare to the number of reviews published
       for a certain genre?'.  To answer this, we aggregated each movie within a certain genre, like we did previously, and
       then calculated amount of reviews each film got within that genre.  We then averaged those out to a single number and
-      plotted the results.  This demonstrates which genre reviewers leaned towards more.
+      plotted the results.  This depicts which genre reviewers leaned towards more.
     </div><br>
 
-<div class="potato"></div>
-<div class="data"></div>
-<p>Credit: <a href="https://observablehq.com/@bmcghee/genres/2">Genres by Brandon Mcghee</a></p>
+    <div class="potato"></div>
+    <div class="data"></div>
+    <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@bmcghee/genres/2.js?v=3";
+      (new Runtime).module(define, name => {
+        if (name === "potato") return Inspector.into(".potato")();
+        return ["load"].includes(name) || null;
+      });
+    </script>
 
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@bmcghee/genres/2.js?v=3";
-(new Runtime).module(define, name => {
-  if (name === "potato") return Inspector.into(".potato")();
-  return ["load"].includes(name) || null;
-});
-</script>
-
-    
-
+    <br><br> 
     <div style="text-align:left;font-family:'verdana'">
       Lastly, we took a look at how this persisted over the last century.  This begins around 1930, when film started to
       become mainstream across the United States, until the present.  Each color represents a different genre of film
       and how its trend changed over the years.
     </div><br><br> 
 
-    <body>
-      <div class="streamgraph"></div>    
-      <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/bf9ccd0ad463f3b5.js?v=3";
-        (new Runtime).module(define, name => {
-          if (name === "streamgraph") return Inspector.into(".streamgraph")();
-        });
-      </script>
-    </body>
+    <div class="streamgraph"></div>    
+    <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/a223652cdcec24a3.js?v=3";
+      (new Runtime).module(define, name => {
+        if (name === "streamgraph") return Inspector.into(".streamgraph")();
+      });
+    </script>
+
 
     <br><p style="text-align:center">| Brandon Mcghee ~ Sam Newcomer ~ Dylan Mumm |</p>
   <html>
