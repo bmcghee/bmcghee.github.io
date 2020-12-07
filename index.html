@@ -25,28 +25,18 @@
       plotted the results.  This demonstrates which genre reviewers leaned towards more.
     </div><br>
 
-    <body>
-    <div class="chart",></div>
-      <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/b7579e64ed16d088.js?v=3";
-        (new Runtime).module(define, name => {
-          if (name === "chart") return Inspector.into(".chart")();
-        });
-      </script>
-    </body><br>
+<div class="potato"></div>
+<p>Credit: <a href="https://observablehq.com/@bmcghee/genres/2">Genres by Brandon Mcghee</a></p>
 
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@bmcghee/genres/2.js?v=3";
+(new Runtime).module(define, name => {
+  if (name === "potato") return Inspector.into(".potato")();
+});
+</script>
 
-    <body>
-      <div class="chart"></div>  
-      <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/3dc8ae0880fa8dbb.js?v=3";
-        (new Runtime).module(define, name => {
-          if (name === "chart") return Inspector.into(".chart")();
-        });
-      </script>
-    </body>
+    
 
     <div style="text-align:left;font-family:'verdana'">
       Lastly, we took a look at how this persisted over the last century.  This begins around 1930, when film started to
