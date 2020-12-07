@@ -25,7 +25,8 @@
       plotted the results.  This demonstrates which genre reviewers leaned towards more.
     </div><br>
 
-<<div class="potato"></div>
+<div class="potato"></div>
+<div class="data"></div>
 <p>Credit: <a href="https://observablehq.com/@bmcghee/genres/2">Genres by Brandon Mcghee</a></p>
 
 <script type="module">
@@ -33,6 +34,7 @@ import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/run
 import define from "https://api.observablehq.com/@bmcghee/genres/2.js?v=3";
 (new Runtime).module(define, name => {
   if (name === "potato") return Inspector.into(".potato")();
+  return ["load"].includes(name) || null;
 });
 </script>
 
