@@ -2,8 +2,8 @@
 
 Team u07
 Brandon Mcghee, Sam Newcomer, Dylan Mumm
-https://bmcghee.github.io/
-https://developer.imdb.com/
+Website link: https://bmcghee.github.io/
+Dataset source: https://www.imdb.com/interfaces/
 
 Brandon Mcghee
 
@@ -17,4 +17,4 @@ Generated streamgraph
 Dylan Mumm
 
 Did initial pulling of IMDB data.
-Did mochups for graphs in Tableau.
+Did mockups for graphs in Tableau.
