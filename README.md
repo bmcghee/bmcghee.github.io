@@ -8,11 +8,12 @@ Dataset source: https://www.imdb.com/interfaces/
 Brandon Mcghee
 
 Hosted website on github account
-Generated two bar graphs
+Generated two bar graphs/ interactive bar graph
 
 Sam Newcomer
 
 Generated streamgraph
+Project Video
 
 Dylan Mumm
 
